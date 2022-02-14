@@ -34,6 +34,21 @@
     </thead>
     @foreach (var pizza in Model.pizzas)
     {
-        
+        <tr>
+            <td>@pizza.Name</td>
+            <td>@($"{pizza.Price:C}")</td>
+            <td>@pizza.Size</td>
+            <td>@Model.GlutenFreeText(pizza)</td>
+            <td>
+                <form method="post" asp-page-handler="Delete" asp-rout-id="@pizza.Id">
+                    <button class="btn btn-danger">Excluir</button>
+                </form>
+            </td>
+        </tr>
     }
 </table>
+
+@section Scripts
+{
+    <partial name = "_ValidationScriptsPartial" />
+}

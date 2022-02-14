@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using RazorPagesPizza.Models;
 using RazorPagesPizza.Services;
 
-namespace RazorPAgesPizza.pages
+namespace RazorPagesPizza.pages
 {
     public class PizzaModel : PageModel
     {

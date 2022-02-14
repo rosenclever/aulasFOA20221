@@ -1,6 +1,6 @@
 ﻿@page
 @using RazorPagesPizza.Models
-@model RazorPAgesPizza.pages.PizzaModel
+@model RazorPagesPizza.pages.PizzaModel
 @{
     ViewData["Title"] = "Pizza List";
 }
@@ -40,7 +40,7 @@
             <td>@pizza.Size</td>
             <td>@Model.GlutenFreeText(pizza)</td>
             <td>
-                <form method="post" asp-page-handler="Delete" asp-rout-id="@pizza.Id">
+                <form method="post" asp-page-handler="Delete" asp-route-id="@pizza.Id">
                     <button class="btn btn-danger">Excluir</button>
                 </form>
             </td>

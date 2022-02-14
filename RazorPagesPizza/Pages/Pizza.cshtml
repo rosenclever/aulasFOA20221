@@ -1,4 +1,39 @@
 ﻿@page
+@using RazorPagesPizza.Models
 @model RazorPAgesPizza.pages.PizzaModel
 @{
+    ViewData["Title"] = "Pizza List";
 }
+
+<h1>Pizza List</h1>
+<form method="post" class="card p-3">
+    <div class="row">
+        <div asp-validation-summary="All"></div>
+    </div>
+    <div class="form-group mb-0 align-middle">
+        <label asp-for="NewPizza.Name">Nome</label>
+        <input type="text" asp-for="NewPizza.Name" class="mr-5">
+        <label asp-for="NewPizza.Size">Tamanho</label>
+        <select asp-for="NewPizza.Size" asp-items="Html.GetEnumSelectList<PizzaSize>()" class="mr-5"></select>
+        <label asp-for="NewPizza.Price">Preço</label>
+        <input asp-for="NewPizza.Price" class="mr-5">
+        <label asp-for="NewPizza.IsGlutenFree">Sem Glútem?</label>
+        <input type="checkbox" asp-for="NewPizza.IsGlutenFree" class="mr-5">
+        <button class="btn btn-primary">Adicionar</button>
+    </div>
+</form>
+<table class="table mt-5">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Tamanho</th>
+            <th scope="col">Sem Glútem?</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    @foreach (var pizza in Model.pizzas)
+    {
+        
+    }
+</table>
